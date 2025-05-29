@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>reparirx</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/css/intlTelInput.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous" />
+  </head>
+  <body>
+    <section>
+      <nav class="navbar fixed-top">
+        <div class="logo">
+          <img src="gambar/logo.jpg" alt="Logo" />
+        </div>
+        <div class="hamburger" id="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="nav-links" id="nav-links">
+          <a href="#">Home</a>
+          <a href="#">Repaire Services</a>
+          <a href="#">Aboute</a>
+          <a href="#">Blog</a>
+          <a href="#">Contact</a>
+          <a href="#">Free Online Diagnosis</a>
+          <a href="#">Join Us</a>
+        </div>
+      </nav>
+    </section>
+    <!-- <div class="section section1" id="section1"> -->
+    <section>
+      <div class="carousel">
+        <div class="card-carou">
+          <img src="gambar/mack.jpg" alt="" />
+        </div>
+        <div class="card-carou">
+          <img src="gambar/mack3.jpg" alt="" />
+        </div>
+      </div>
+    </section>
+    <br /><br />
+    <section>
+      <div class="wrapper">
+        <div class="container">
+          <!-- <div class="row align-items-end"> -->
+          <div class="text-section">
+            <h3>FREE ISLANDWIDE & ONSITE PICKUP</h3>
+            <h2>MacBook and Laptop Repair Services in Singapore</h2>
+            <p>Welcome to Singapore’s leading MacBook, laptop, and computer repair service, specializing in repairs and replacements for iMacs, MacBooks, and major Windows laptops.</p>
+          </div>
+          <div class="form-section">
+            <div class="form-container">
+              <div class="logo-title">
+                <img src="gambar/logo.jpg" alt="" width="100px" />
+                <h2 style="color: black">Quick Enquiry</h2>
+              </div>
+              <form id="multistepform">
+                <div class="step active" id="step1">
+                  <label for="problem">What's your device problem?</label>
+                  <select id="problem">
+                    <option value="">-Select-</option>
+                    <option>Cannot Power On</option>
+                    <option>Very Slow/Lagging</option>
+                    <option>Auto Shut Down</option>
+                    <option>Battery Related</option>
+                    <option>Screen Related</option>
+                    <option>Corrupted Data</option>
+                    <option>Other</option>
+                  </select>
+                  <div class="buttons">
+                    <!-- <button type="button" disabled>Previous</button> -->
+                    <button type="button" onclick="nextStep()">Next</button>
+                  </div>
+                </div>
+                <div class="step" id="step2">
+                  <label for="remarks">Any remarks to add on? (If any)</label>
+                  <input type="text" id="remarks" placeholder="Write here..." />
+                  <label for="image">Have a photo of the damage? (If any)</label>
+                  <input type="file" id="image" accept="image" onchange="previewImage(event)" />
+                  <!-- <img id="preview" class="previewImage" alt="preview image" /> -->
+                  <div class="buttons">
+                    <button type="button" onclick="prevStep()">Previous</button>
+                    <button type="button" onclick="nextStep()">Next</button>
+                  </div>
+                </div>
+                <div class="step" id="step3">
+                  <label for="details">What is the Brand of your device?</label>
+                  <select id="details">
+                    <option value="">-Select Brand-</option>
+                    <option>Other Brands</option>
+                    <option>Apple</option>
+                    <option>Acer</option>
+                    <option>Asus</option>
+                    <option>Dell</option>
+                    <option>HP</option>
+                    <option>Microsoft</option>
+                    <option>MSI</option>
+                    <option>Lenovo</option>
+                    <option>Samsung</option>
+                    <option>Sony</option>
+                    <option>Toshiba</option>
+                    <option>Fujitsu</option>
+                  </select>
+                  <label for="device">Device Model</label>
+                  <input type="text" id="device" placeholder="Write device model" />
+                  <label for="serial">Serial Number (If any)</label>
+                  <span class="info-icon">
+                    <!-- <span class="info-text">You can find your serial number below your laptop.</span> -->
+                  </span>
+                  <input type="text" id="serial" placeholder="W88401231AX" />
+                  <div class="buttons">
+                    <button type="button" onclick="prevStep()">Previous</button>
+                    <button type="button" onclick="nextStep()">Next</button>
+                  </div>
+                </div>
+                <div class="step" id="step4">
+                  <label for="how">How do we reach you? <span style="color: red">*</span></label>
+                  <select id="how" required>
+                    <option value="">-Select Method-</option>
+                    <option>WhatsApp</option>
+                    <option>Call</option>
+                    <option>SMS</option>
+                  </select>
+                  <label for="nama">Name <span style="color: red">*</span></label>
+                  <input type="text" id="nama" placeholder="Your Name" required />
+
+                  <label for="telephone">Phone/Mobile <span style="color: red">*</span></label>
+                  <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 10px">
+                    <span class="flag"></span>
+                    <input type="tel" id="phone" name="phone" placeholder="Mobile Number" required />
+                  </div>
+
+                  <label for="email">Email <span style="color: red">*</span></label>
+                  <input type="text" id="email" name="email" placeholder="Your Email" required />
+                  <label for="find">How did you find us?</label>
+                  <select id="find">
+                    <option value="">-Select-</option>
+                    <option>Google/Maps</option>
+                    <option>Facebook/Instagram Ads</option>
+                    <option>Carousell</option>
+                    <option>Influencer</option>
+                    <option>Word-of-Mouth</option>
+                    <option>Other</option>
+                  </select>
+                  <div class="buttons">
+                    <button type="button" id="prevBtn" onclick="prevStep()">Previous</button>
+                    <button type="button" id="nextBtn" onclick="nextStep()">Next</button>
+                    <button type="submit" id="submitBtn" style="display: none">Submit</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+          <!-- </div> -->
+        </div>
+      </div>
+    </section>
+    <div class="wave">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+        <path
+          fill="#ffffff"
+          fill-opacity="1"
+          d="M0,192L80,192C160,192,320,192,480,208C640,224,800,256,960,234.7C1120,213,1280,139,1360,101.3L1440,64L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"
+        ></path>
+      </svg>
+    </div>
+    <section class="card-deskripsi">
+      <img src="gambar/logo.jpg" alt="" />
+      <div class="card-deskripsi-teks">
+        <br />
+        <h2>Revolutionizing Computer Repair in Singapore</h2>
+        <p style="font-family: Roboto; color: rgb(83, 78, 78); margin-top: 30px">At RepairX Pte Ltd offers a comprehensive suite of computer repair services tailored to meet the unique needs of our clients.</p>
+        <p style="font-family: Roboto; color: rgb(83, 78, 78); margin-top: 30px">Below is a brief overview of what we offer:</p>
+        <br />
+        <br />
+        <br />
+        <p><b>80 Days Warranty Protection</b></p>
+      </div>
+      <br />
+      <br />
+      <div class="features-container">
+        <div class="feature-item">
+          <img src="gambar/battery-replacement.webp" alt="Battery Parts" />
+          <div class="feature-text">
+            <h3><b>Battery Parts</b></h3>
+            <p>If the power on your phone isn't lasting as long as before, your battery has to be changed.</p>
+          </div>
+        </div>
+        <div class="feature-item">
+          <img src="gambar/laptop.webp" alt="LCD Screen" />
+          <div class="feature-text">
+            <h3><b>LCD Screen</b></h3>
+            <p>Is your screen flickering, cracked, unresponsive or has broken pixel lines across it?</p>
+          </div>
+        </div>
+        <div class="feature-item">
+          <img src="gambar/water.webp" alt="Parts for Water Damage" />
+          <div class="feature-text">
+            <h3><b>Parts for Water Damage</b></h3>
+            <p>A motherboard's worst enemy is water. Find the chipsets or other components you require from us!</p>
+          </div>
+        </div>
+      </div>
+      <div class="features-container">
+        <div class="feature-item">
+          <img src="gambar/motherboard.webp" alt="Motherboard" />
+          <div class="feature-text">
+            <h3><b>Motherboard</b></h3>
+            <p>The motherboard and CPU are the computer's brain. Find your device's exact model.</p>
+          </div>
+        </div>
+        <div class="feature-item">
+          <img src="gambar/ram.webp" alt="SSD & RAM" />
+          <div class="feature-text">
+            <h3><b>SSD & RAM</b></h3>
+            <p>Not enough room or unable to play that new game? Upgrade your own components.</p>
+          </div>
+        </div>
+        <div class="feature-item">
+          <img src="gambar/15.webp" alt="Recovery Software" />
+          <div class="feature-text">
+            <h3><b>Recovery Software</b></h3>
+            <p>Have you kept your data and files are protected? Contact us today.</p>
+          </div>
+        </div>
+      </div>
+      <br />
+      <br />
+      <button type="button" class="btn btn-primary btn-md" style="font-family: Arial, Helvetica, sans-serif; margin-bottom: 60px">Chat Wit an Agent</button>
+      <br />
+    </section>
+    <!-- <section class="deskripsi-from">
+      <div class="card-deskripsi-from">
+        <h2><b>From MacBook to Windows Laptop. Find parts to fix your device</b></h2>
+        <p>RepairX Pte Ltd is at the forefront of the computer repair industry in Singapore, powered by a team of passionate and skilled professionals. With years of experience under our belts, we pride ourselves on delivering exceptional service and innovative solutions.</p>
+      </div>
+    </section> -->
+    <section class="deskripsi-from" style="display: flex; justify-content: center; align-items: center; height: 60vh; margin: 0">
+      <div class="teks-box">
+        <h2><b style="font-size: 35px; font-family: Roboto">From MacBook to Windows Laptop. Find parts to fix your device</b></h2>
+        <p style="font-size: 18px; font-family: Roboto; color: rgb(83, 78, 78); margin-top: 30px">
+          RepairX Pte Ltd is at the forefront of the computer repair industry in Singapore, powered by a team of passionate and skilled professionals. With years of experience under our belts, we pride ourselves on delivering exceptional
+          service and innovative solutions.
+        </p>
+      </div>
+    </section>
+
+    <footer>
+      <div class="footer-container">
+        <div class="footer-section">
+          <h3>RepairX Service Centre</h3>
+          <p>We carry a wide range of laptop and MacBook parts, including Windows, iMac, and MacBook models. Mobile phones, tablets, and desktop PCs are some other gadgets.</p>
+          <div class="social-icons">
+            <a href="#"><img src="facebook-icon.png" alt="Facebook" /></a>
+            <a href="#"><img src="instagram-icon.png" alt="Instagram" /></a>
+            <a href="#"><img src="tiktok-icon.png" alt="TikTok" /></a>
+          </div>
+        </div>
+        <div class="footer-section">
+          <h3>Operating Hours</h3>
+          <p>Monday to Sunday: 11am to 7pm<br />Closed on PH</p>
+        </div>
+        <div class="footer-section">
+          <h3>Navigation</h3>
+          <ul style="text-decoration: none; color: inherit">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Parts</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">Free Online Diagnosis</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Contact RepairX</h3>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.8860937653516!2d103.81983661475413!3d1.3520839990454606!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da170bd5f93597%3A0x1b2e0c4a16d3e86b!2sSingapore!5e0!3m2!1sen!2ssg!4v1716951979261!5m2!1sen!2ssg"
+            frameborder="0"
+            width="80%"
+            height="150px"
+            style="border: 0; border-radius: 10px"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          >
+          </iframe>
+          <p>International Plaza (Singapore)<br />10 Anson Road #02-71<br />Singapore 079903<br />Tanjong Pagar MRT Station Exit C</p>
+          <p><a href="mailto:hello@repairx.sg">hello@repairx.sg</a></p>
+          <p>+65 9779 2009 (Whatsapp Only)</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>Copyright &copy; 2024 RepairX Pte. Ltd. | UEN: 202243548H | All Rights Reserved</p>
+      </div>
+    </footer>
+    <!-- WhatsApp -->
+    <a href="https://wa.me/6281234567890" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
+      <img src="https://img.icons8.com/color/48/000000/whatsapp--v1.png" alt="Chat on WhatsApp" />
+    </a>
+
+    <!-- Java Sript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/intlTelInput.min.js"></script>
+    <!-- Navbar Toggler -->
+    <script>
+      const hamburger = document.getElementById("hamburger");
+      const navLinks = document.getElementById("nav-links");
+
+      hamburger.addEventListener("click", () => {
+        navLinks.classList.toggle("active");
+      });
+    </script>
+
+    <script>
+      const input = document.querySelector("#phone");
+      window.intlTelInput(input, {
+        initialCountry: "auto",
+        geoIpLookup: function (callback) {
+          fetch("https://ipinfo.io/json?token=<your_token_here>")
+            .then((res) => res.json())
+            .then((data) => callback(data.country))
+            .catch(() => callback("us"));
+        },
+        utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/utils.js",
+      });
+    </script>
+    <script>
+      // Carousel
+      document.addEventListener("DOMContentLoaded", function () {
+        const carousel = document.querySelector(".carousel"); // Ambil elemen carousel
+        let scrollAmount = 0; // Posisi scroll awal
+        const slideWidth = 300; // Sesuaikan dengan lebar kartu (sesuai CSS)
+        const scrollSpeed = 1800; // Waktu perpindahan (ms)
+
+        function autoScrollCarousel() {
+          if (carousel) {
+            scrollAmount += slideWidth + 10; // Geser sesuai lebar kartu + margin
+            if (scrollAmount >= carousel.scrollWidth - carousel.clientWidth) {
+              scrollAmount = 0; // Kembali ke awal saat mencapai akhir
+            }
+            carousel.scrollTo({
+              left: scrollAmount,
+              behavior: "smooth", // Efek smooth
+            });
+          }
+        }
+
+        // Set interval untuk geser otomatis
+        setInterval(autoScrollCarousel, scrollSpeed);
+      });
+
+      // Step
+      const steps = document.querySelectorAll(".step");
+      let currentStep = 0;
+
+      function showStep(index) {
+        steps.forEach((step, i) => {
+          step.classList.toggle("active", i === index);
+        });
+
+        // Atur tombol Next dan Submit
+        document.getElementById("nextBtn").style.display = index === steps.length - 1 ? "none" : "inline-block";
+        document.getElementById("submitBtn").style.display = index === steps.length - 1 ? "inline-block" : "none";
+
+        // Atur tombol Previous
+        document.getElementById("prevBtn").style.display = index === 0 ? "none" : "inline-block";
+      }
+
+      function nextStep() {
+        const activeInputs = steps[currentStep].querySelectorAll("input, select, textarea");
+        for (let input of activeInputs) {
+          if (!input.checkValidity()) {
+            input.reportValidity();
+            return;
+          }
+        }
+        if (currentStep < steps.length - 1) {
+          currentStep++;
+          showStep(currentStep);
+        }
+      }
+
+      function prevStep() {
+        if (currentStep > 0) {
+          currentStep--;
+          showStep(currentStep);
+        }
+      }
+
+      document.getElementById("multiForm").addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        const name = document.getElementById("name");
+        if (!name.value.trim()) {
+          alert("Please enter your name.");
+          name.focus();
+          return;
+        }
+
+        alert("Form submitted!");
+        this.reset();
+        currentStep = 0;
+        showStep(currentStep);
+      });
+
+      showStep(currentStep);
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
+  </body>
+</html>

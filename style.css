@@ -349,7 +349,7 @@ label {
 
 .repair-container {
    display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1.2fr));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 20px;
   background-color: #ffffff;
   padding: 40px 50px;
@@ -585,9 +585,8 @@ ul {
   }
 
   .repair-container {
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    padding: 20px;
-    gap: 15px;
+    padding: 30px 25px;
+    gap: 16px;
   }
 
   .repair-label {
@@ -683,20 +682,19 @@ ul {
     padding: 15px;
   }
 
- .repair-container {
-    grid-template-columns: 1fr;
-    padding: 15px;
+  .repair-container {
+    padding: 20px 15px;
     gap: 12px;
   }
 
   .repair-card {
-    max-width: 100%;
-    margin: 0 auto;
+    margin: 0;
+    border-radius: 10px;
   }
 
   .repair-label {
-    font-size: 13px;
-    padding: 8px 0;
+    font-size: 14px;
+    padding: 5px 0;
   }
 
   .footer-container {

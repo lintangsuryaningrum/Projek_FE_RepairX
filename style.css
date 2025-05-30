@@ -585,14 +585,9 @@ ul {
   }
 
   .repair-container {
-    grid-template-columns: 1fr; 
-    padding: 20px 20px;         
-    gap: 15px;         
-  }
-
-   .repair-card {
-    margin: 0 auto;
-    width: 100%;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    padding: 20px;
+    gap: 15px;
   }
 
   .repair-label {
@@ -688,18 +683,20 @@ ul {
     padding: 15px;
   }
 
-  .repair-container {
+ .repair-container {
+    grid-template-columns: 1fr;
     padding: 15px;
-    gap: 10px;
+    gap: 12px;
+  }
+
+  .repair-card {
+    max-width: 100%;
+    margin: 0 auto;
   }
 
   .repair-label {
     font-size: 13px;
-    padding: 5px;
-  }
-
-  .repair-card {
-    border-radius: 8px;
+    padding: 8px 0;
   }
 
   .footer-container {

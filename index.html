@@ -361,11 +361,15 @@
         });
 
         // Atur tombol Next dan Submit
-        document.getElementById("nextBtn").style.display = index === steps.length - 1 ? "none" : "inline-block";
-        document.getElementById("submitBtn").style.display = index === steps.length - 1 ? "inline-block" : "none";
+        const nextBtn = document.getElementById("nextBtn");
+        const submitBtn = document.getElementById("submitBtn");
+        const prevBtn = document.getElementById("prevBtn");
 
-        // Atur tombol Previous
-        document.getElementById("prevBtn").style.display = index === 0 ? "none" : "inline-block";
+        if (nextBtn && submitBtn && prevBtn) {
+          nextBtn.style.display = index === steps.length - 1 ? "none" : "inline-block";
+          submitBtn.style.display = index === steps.length - 1 ? "inline-block" : "none";
+          prevBtn.style.display = index === 0 ? "none" : "inline-block";
+        }
       }
 
       function nextStep() {
@@ -389,30 +393,47 @@
         }
       }
 
-      document.getElementById("multiForm").addEventListener("submit", function (e) {
+      document.getElementById("multistepform").addEventListener("submit", function (e) {
         e.preventDefault();
 
-        const name = document.getElementById("name").value.trim();
+        // Ambil nilai dari semua input
+        const name = document.getElementById("nama").value.trim();
         const email = document.getElementById("email").value.trim();
-        const message = document.getElementById("message").value.trim();
+        const phone = document.getElementById("phone").value.trim();
+        const problem = document.getElementById("problem").value.trim();
+        const remarks = document.getElementById("remarks").value.trim();
+        const brand = document.getElementById("details").value.trim();
+        const model = document.getElementById("device").value.trim();
+        const serial = document.getElementById("serial").value.trim();
+        const how = document.getElementById("how").value.trim();
+        const find = document.getElementById("find").value.trim();
 
-        if (!name) {
-          alert("Masukkan nama Anda.");
-          document.getElementById("name").focus();
-          return;
-        }
+        // Pesan WhatsApp
+        const pesan =
+          `Halo, saya ingin servis perangkat saya.\n` +
+          `Nama: ${name}\n` +
+          `Email: ${email}\n` +
+          `No HP: ${phone}\n` +
+          `Preferensi Kontak: ${how}\n` +
+          `Masalah: ${problem}\n` +
+          `Keterangan: ${remarks || "-"}\n` +
+          `Merek: ${brand}\n` +
+          `Model: ${model}\n` +
+          `Serial: ${serial || "-"}\n` +
+          `Menemukan via: ${find || "-"}`;
 
         const nomorWA = "6285600479920";
-        const pesan = `Halo, saya ${name}%0AEmail: ${email}%0APesan: ${message}`;
+        const urlWa = `https://wa.me/${nomorWA}?text=${encodeURIComponent(pesan)}`;
 
-        const waUrl = `https://wa.me/6285600479920?text=${pesan}`;
-        window.open(waUrl, "_blank");
+        window.open(urlWa, "_blank");
 
+        // Reset form & kembali ke step awal
         this.reset();
         currentStep = 0;
         showStep(currentStep);
       });
 
+      // Inisialisasi tampilan pertama
       showStep(currentStep);
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>

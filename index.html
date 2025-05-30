@@ -297,7 +297,7 @@
       </div>
     </footer>
     <!-- WhatsApp -->
-    <a href="https://wa.me/6281234567890" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
+    <a href="https://wa.me/6285600479920" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
       <img src="https://img.icons8.com/color/48/000000/whatsapp--v1.png" alt="Chat on WhatsApp" />
     </a>
 
@@ -392,14 +392,22 @@
       document.getElementById("multiForm").addEventListener("submit", function (e) {
         e.preventDefault();
 
-        const name = document.getElementById("name");
-        if (!name.value.trim()) {
-          alert("Please enter your name.");
-          name.focus();
+        const name = document.getElementById("name").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const message = document.getElementById("message").value.trim();
+
+        if (!name) {
+          alert("Masukkan nama Anda.");
+          document.getElementById("name").focus();
           return;
         }
 
-        alert("Form submitted!");
+        const nomorWA = "6285600479920";
+        const pesan = `Halo, saya ${name}%0AEmail: ${email}%0APesan: ${message}`;
+
+        const waUrl = `https://wa.me/6285600479920?text=${pesan}`;
+        window.open(waUrl, "_blank");
+
         this.reset();
         currentStep = 0;
         showStep(currentStep);

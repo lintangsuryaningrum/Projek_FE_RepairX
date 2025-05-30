@@ -152,7 +152,7 @@
 
 .text-section h3 {
   font-size: 20px;
-  color: #242323;
+  color: #646161;
   text-align: left;
   margin-top: 60px;
   
@@ -343,6 +343,48 @@ label {
   background-color: white;
   /* border: 0px solid rgb(126, 107, 107); */
   text-align: center;
+}
+
+/* From Repair */
+
+.repair-container {
+   display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1.2fr));
+  gap: 20px;
+  background-color: #ffffff;
+  padding: 40px 50px;
+}
+
+.repair-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  margin: 0 5px;
+}
+
+.repair-card:hover {
+  transform: scale(1);
+}
+
+.repair-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.repair-label {
+  position: absolute;
+  bottom: 12px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  text-shadow: 0 0 5px rgba(0,0,0,0.7);
 }
 
 /* Footer */
@@ -541,6 +583,22 @@ ul {
   .teks-box {
     padding: 20px;
   }
+
+  .repair-container {
+    grid-template-columns: 1fr; 
+    padding: 20px 20px;         
+    gap: 15px;         
+  }
+
+   .repair-card {
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .repair-label {
+    font-size: 14px;
+  }
+
    .footer-container {
         flex-direction: column;
         align-items: center;
@@ -628,6 +686,20 @@ ul {
   .teks-box {
     width: 95vw;
     padding: 15px;
+  }
+
+  .repair-container {
+    padding: 15px;
+    gap: 10px;
+  }
+
+  .repair-label {
+    font-size: 13px;
+    padding: 5px;
+  }
+
+  .repair-card {
+    border-radius: 8px;
   }
 
   .footer-container {
